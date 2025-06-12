@@ -32,7 +32,8 @@
   },
   "bugs": "https://github.com/Suruat/vue-2-crumbs/issues",
   "devDependencies": {
-    "tsdown": "^0.12.7"
+    "tsdown": "^0.12.7",
+    "unplugin-vue": "^6.2.0"
   },
   "scripts": {
     "dev2": "npm -w playground/vue2 run dev",

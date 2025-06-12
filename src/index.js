@@ -1,4 +1,4 @@
-import Breadcrumbs from './breadcrumbComponent'
+import Breadcrumbs from './breadcrumbComponent.vue'
 import { isEqual } from 'es-toolkit'
 import mitt from 'mitt'
 import pkg from '../package.json'

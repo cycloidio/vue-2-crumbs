@@ -1,8 +1,4 @@
-import { isObject, get } from "es-toolkit/compat"
-
-export default {
-  name: 'app-breadcrumbs',
-  template: `
+<template>
     <ul
       class="breadcrumbs-container"
       :is="container"
@@ -31,7 +27,13 @@ export default {
         </slot>
       </li>
     </ul>
-  `,
+</template>
+
+<script>
+import { isObject, get } from "es-toolkit/compat"
+
+export default {
+  name: 'app-breadcrumbs',
   props: {
     container: {
       type: String,
@@ -222,3 +224,4 @@ export default {
     })
   }
 }
+</script>
