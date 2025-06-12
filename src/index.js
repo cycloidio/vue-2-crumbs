@@ -1,9 +1,10 @@
 import Breadcrumbs from './breadcrumbComponent'
 import { isEqual } from 'es-toolkit'
 import mitt from 'mitt'
+import pkg from '../package.json'
 
 const vue2Crumbs = {
-  version: '0.5.3',
+  version: pkg.version,
   install (Vue, options) {
     function $_vue2Crumbs_dispatchNewValue(meta) {
       const {label, parentsList, parent, utils} = this.$breadcrumb
