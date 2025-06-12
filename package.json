@@ -46,7 +46,6 @@
   ],
   "dependencies": {
     "es-toolkit": "^1.39.3",
-    "mitt": "^3.0.1",
-    "vue-demi": "^0.14.10"
+    "mitt": "^3.0.1"
   }
 }
