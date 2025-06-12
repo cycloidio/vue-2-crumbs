@@ -7,5 +7,6 @@ export default defineConfig({
   format: "esm",
   bundle: true,
   plugins: [Vue({ isProduction: true })],
+  external: ['vue'],
   noExternal: ['es-toolkit', 'es-toolkit/compat']
 });
