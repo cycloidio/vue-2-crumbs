@@ -6,7 +6,14 @@
     "name": "Alexeev Kyrylo",
     "email": "suruat90@gmail.com"
   },
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
   "keywords": [
     "breadcrumbs",
     "vue",
@@ -25,18 +32,20 @@
   },
   "bugs": "https://github.com/Suruat/vue-2-crumbs/issues",
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "webpack": "^3.11.0"
+    "tsdown": "^0.12.7"
   },
   "scripts": {
-    "build": "webpack",
-    "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev2": "npm -w playground/vue2 run dev",
+    "build": "tsdown",
+    "prepare": "npm run build"
   },
+  "workspaces": [
+    "playground/vue2",
+    "src"
+  ],
   "dependencies": {
-    "lodash.isequal": "^4.5.0"
+    "es-toolkit": "^1.39.3",
+    "mitt": "^3.0.1",
+    "vue-demi": "^0.14.10"
   }
 }

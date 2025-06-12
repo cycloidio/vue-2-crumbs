@@ -1,10 +1,4 @@
-import get from 'lodash/get'
-
-const utils = {
-  isObject (checkMe) {
-    return typeof checkMe === 'object'&& !Array.isArray(checkMe) && checkMe !== null
-  }
-}
+import { isObject, get } from "es-toolkit/compat"
 
 export default {
   name: 'app-breadcrumbs',
@@ -56,7 +50,7 @@ export default {
     },
     currentRoute () {
       // This check is just to make sure that '$forceUpdate' would work
-      if (!this.isInitialEmptyRoute && (this.parentHelper || !this.parentHelper)) {
+      if (!this.isInitialEmptyRoute) {
         return this.$route
       }
     },
@@ -162,7 +156,7 @@ export default {
 
         if (typeof breadcrumbParent === 'string') {
           routeResolveObject = {name: breadcrumbParent}
-        } else if (utils.isObject(breadcrumbParent)) {
+        } else if (isObject(breadcrumbParent)) {
           routeResolveObject = breadcrumbParent
         } else {
           console.error(`Vue-2-Crumbs Error: 'parent' property in breadcrumb object for '${route.name}' route has wrong type. Only string or object is allowed`);
@@ -215,7 +209,7 @@ export default {
   },
   created () {
     // Listen to the change of route breadcrumb object
-    this.$_vue2Crumbs_eventBUS.$on('breadcrumbChanged', () => {
+    this.$_vue2Crumbs_eventBUS.on('breadcrumbChanged', () => {
       const metaBreadcrumb = this.$route.meta.breadcrumb
 
       if (metaBreadcrumb.parentsList) {

@@ -1,5 +1,6 @@
 import Breadcrumbs from './breadcrumbComponent'
-import isEqual from 'lodash.isequal';
+import { isEqual } from 'es-toolkit'
+import mitt from 'mitt'
 
 const vue2Crumbs = {
   version: '0.5.3',
@@ -34,7 +35,7 @@ const vue2Crumbs = {
         metaBreadcrumb.utils = utils
       }
 
-      this.$_vue2Crumbs_eventBUS.$emit('breadcrumbChanged')
+      this.$_vue2Crumbs_eventBUS.emit('breadcrumbChanged')
     }
 
     function $_vue2Crumbs_checkMatchedRoutes() {
@@ -51,7 +52,7 @@ const vue2Crumbs = {
       }
     }
 
-    Vue.prototype.$_vue2Crumbs_eventBUS = new Vue()
+    Vue.prototype.$_vue2Crumbs_eventBUS = mitt()
 
     Vue.component(Breadcrumbs.name, Breadcrumbs)
 
