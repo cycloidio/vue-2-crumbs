@@ -1,5 +1,5 @@
 import { defineConfig } from "tsdown";
-import Vue from 'unplugin-vue/rolldown'
+import Vue from 'unplugin-vue2/rollup'
 
 export default defineConfig({
   entry: "src/index.js",
